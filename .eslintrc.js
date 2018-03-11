@@ -15,9 +15,8 @@ module.exports = {
     },
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": [ "react" ],
+  "globals": { "graphql": true },
   "rules": {
     "indent": [
       "error",
@@ -26,10 +25,6 @@ module.exports = {
     "linebreak-style": [
       "error",
       "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
     ],
     "semi": [
       "error",
