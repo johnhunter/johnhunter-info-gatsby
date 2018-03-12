@@ -28,7 +28,7 @@ const TemplateWrapper = ({ children, data }) => {
         {children()}
       </div>
     </div>
-  )
+  );
 };
 
 TemplateWrapper.propTypes = {
