@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
 
-const Header = ({ title }) => (
+const Header = ({ title, themeColor }) => (
   <div
     style={{
-      background: 'rebeccapurple',
+      background: themeColor,
       marginBottom: '1.45rem',
     }}
   >
@@ -33,7 +33,8 @@ const Header = ({ title }) => (
 );
 
 Header.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  themeColor: PropTypes.string.color
 };
 
 export default Header;

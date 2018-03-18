@@ -14,9 +14,18 @@ const TemplateWrapper = ({ children, data }) => {
     <div>
       <Helmet
         title={metaData.title}
-        meta={meta}
+        meta={meta}>
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicons/icon-16.png'
+        />
+      </Helmet>
+      <Header
+        title={metaData.title}
+        themeColor = {metaData.themeColor}
       />
-      <Header title={metaData.title}/>
       <div
         style={{
           margin: '0 auto',
@@ -44,7 +53,8 @@ export const query = graphql`
     site {
       siteMetadata {
         title,
-        desc
+        desc,
+        themeColor
       }
     }
   }
