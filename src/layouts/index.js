@@ -12,9 +12,9 @@ const TemplateWrapper = ({ children, data }) => {
   ];
   return (
     <div>
-      <Helmet
-        title={metaData.title}
-        meta={meta}>
+      <Helmet meta={meta}>
+        <title>{metaData.title}</title>
+        <html lang="en" />
         <link
           rel='icon'
           type='image/png'
