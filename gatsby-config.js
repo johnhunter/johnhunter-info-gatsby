@@ -8,6 +8,7 @@ module.exports = {
     themeColor: primaryThemeColor
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
