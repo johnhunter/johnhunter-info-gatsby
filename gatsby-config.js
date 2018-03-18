@@ -11,7 +11,6 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -57,6 +56,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-offline`,
     // make sure to put last in the array
     {
       resolve: `gatsby-plugin-netlify`,
