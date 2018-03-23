@@ -34,7 +34,7 @@ const Header = ({ title, themeColor }) => (
 
 Header.propTypes = {
   title: PropTypes.string,
-  themeColor: PropTypes.string.color
+  themeColor: PropTypes.string
 };
 
 export default Header;
