@@ -13,9 +13,14 @@
     "gatsby-plugin-netlify": "^1.0.19",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.6",
+    "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.36",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "svg-react-loader": "^0.4.5",
+    "typography": "^0.16.6",
+    "typography-plugin-code": "^0.16.11",
+    "typography-theme-lincoln": "^0.15.11"
   },
   "keywords": [
     "gatsby"
