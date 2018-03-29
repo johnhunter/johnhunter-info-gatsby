@@ -5,25 +5,22 @@ import Header from '../components/Header';
 
 
 const TemplateWrapper = ({ children, data }) => {
-  const metaData = data.site.siteMetadata;
-  const meta = [
-    { name: 'description', content: metaData.desc },
-  ];
+  const meta = data.site.siteMetadata;
   return (
     <div>
-      <Helmet meta={meta}>
-        <title>{metaData.title}</title>
-        <html lang="en" />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='16x16'
-          href='/favicons/icon-16.png'
-        />
-      </Helmet>
+      <Helmet
+        htmlAttributes={{ lang: 'en' }}
+        title={meta.title}
+        meta={[
+          { name: 'description', content: meta.desc }
+        ]}
+        link={[
+          { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/favicons/icon-64.png' }
+        ]}
+      />
       <Header
-        title={metaData.title}
-        themeColor = {metaData.themeColor}
+        title={meta.title}
+        themeColor={meta.themeColor}
       />
       <div
         style={{
