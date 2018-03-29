@@ -10,7 +10,8 @@ const TemplateWrapper = ({ children, data }) => {
     <div>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
-        title={meta.title}
+        defaultTitle={meta.title}
+        titleTemplate={`%s | ${meta.title}`}
         meta={[
           { name: 'description', content: meta.desc }
         ]}
