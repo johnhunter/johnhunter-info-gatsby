@@ -8,9 +8,6 @@ theme.plugins = [
 ];
 
 theme.overrideThemeStyles = () => ({
-  'h1 a': {
-    background: 'none'
-  },
   'a': {
     textShadow: 'none'
   }

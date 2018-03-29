@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 
 
 const IndexPage = ({ data }) => (
-  <div>
+  <main>
     <h1>Hi people</h1>
     <h2>{data.allMarkdownRemark.totalCount} Posts</h2>
     {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => (
         <p>{node.excerpt}</p>
       </div>
     ))}
-  </div>
+  </main>
 );
 
 IndexPage.propTypes = {

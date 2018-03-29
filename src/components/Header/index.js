@@ -5,7 +5,7 @@ import Logo from '../Logo';
 
 
 const Header = ({ title, themeColor }) => (
-  <div
+  <header
     style={{
       background: themeColor,
       marginBottom: '1.45rem',
@@ -18,13 +18,13 @@ const Header = ({ title, themeColor }) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link to="/">
-          <Logo title={title} />
-        </Link>
-      </h1>
+      <Link to="/"
+        style={{ background: 'none' }}
+      >
+        <Logo title={title} />
+      </Link>
     </div>
-  </div>
+  </header>
 );
 
 Header.propTypes = {

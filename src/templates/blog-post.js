@@ -7,11 +7,11 @@ const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const fm = post.frontmatter;
   return (
-    <div>
+    <article>
       <Helmet title={fm.title} />
       <h1>{fm.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
+    </article>
   );
 };
 
