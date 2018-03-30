@@ -1,13 +1,16 @@
 const title = 'johnhunter.info';
+const description = 'Personal blog of John Hunter';
 const primaryThemeColor = '#1ab2ff';
+
 
 module.exports = {
   siteMetadata: {
     title: title,
-    desc: 'Personal blog of John Hunter',
+    desc: description,
     themeColor: primaryThemeColor
   },
   plugins: [
+    `gatsby-plugin-glamor`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
@@ -29,7 +32,7 @@ module.exports = {
       options: {
         name: title,
         short_name: 'jh.i',
-        start_url: '/',
+        start_url: '/', // i.e. home
         background_color: '#ffffff',
         theme_color: primaryThemeColor,
         display: 'minimal-ui',
@@ -63,7 +66,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    // make sure to put last in the array
+
+    // make sure to put netlify last in the array
     {
       resolve: `gatsby-plugin-netlify`,
       options: {}
