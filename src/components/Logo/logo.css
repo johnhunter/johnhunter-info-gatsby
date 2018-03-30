@@ -1,3 +1,12 @@
+.jhi-logo {
+  width: 116px;
+  height: 76px;
+  transition: all .5s  .5s;
+}
+.jhi-logo.collapse {
+  transform: translateY(-80px);
+}
+
 .jhi-logo__main {
   fill: hsl(200, 100%, 40%);
 }
@@ -9,14 +18,14 @@
   fill: hsl(200, 50%, 90%);
 }
 .jhi-logo__suffix circle {
-  transition: all 1.5s;
+  transition: all .5s .5s;
   fill: hsl(200, 60%, 40%);
 }
 .collapse circle {
   cy: calc(100% - 8px);
 }
 .jhi-logo__connectors {
-  transition: all 1.5s  1.5s;
+  transition: all .5s;
   opacity: 1.0;
 }
 .collapse .jhi-logo__connectors {
