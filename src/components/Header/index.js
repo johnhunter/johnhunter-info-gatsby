@@ -18,7 +18,10 @@ const Header = ({ title, themeColor }) => {
   });
   const unstyledLinkCss = css({
     display: `inline-block`,
-    background: `none`
+    background: `none`,
+    ':hover': {
+      background: `none`
+    }
   });
 
   return (

@@ -8,14 +8,17 @@ import Header from '../components/Header';
 
 const TemplateWrapper = ({ children, data }) => {
   const site = data.site.siteMetadata;
-  const wrapperCss = css({
+  const mainCss = css({
     margin: '0 auto',
     maxWidth: 960,
     padding: `0px ${rhythm(1.5)} ${rhythm(1)}`
   });
+  const authorCss = css({
+
+  });
 
   return (
-    <div>
+    <div id="wrapper">
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         defaultTitle={site.title}
@@ -31,9 +34,9 @@ const TemplateWrapper = ({ children, data }) => {
         title={site.title}
         themeColor={site.themeColor}
       />
-      <div className={wrapperCss}>
+      <main className={mainCss}>
         {children()}
-      </div>
+      </main>
     </div>
   );
 };

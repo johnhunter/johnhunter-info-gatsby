@@ -28,9 +28,9 @@
   ],
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "clean": "rm -rf public",
-    "lint:js": "eslint --ext .js --ignore-pattern public ."
+    "lint": "eslint --ext .js --ignore-pattern public ."
   },
   "devDependencies": {
     "eslint": "^4.18.2",
