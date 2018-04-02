@@ -6,7 +6,7 @@ const slh = (s, l, h = themeHue) => `hsl(${h},${s}%,${l}%)`;
 
 const theme = {
   scaleRatio: 2,
-  rhythmUnit: `px`, // I see no value in using REMs these days
+  rhythmUnit: `px`,
   googleFonts: [{
     name: `Varela Round`,
     styles: [`400`],

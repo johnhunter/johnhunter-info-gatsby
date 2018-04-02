@@ -3,22 +3,41 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { css } from "glamor";
 import { rhythm } from "../utils/typography";
+import { MIN_MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import Header from '../components/Header';
+import Author from '../components/Author';
 
 
-const TemplateWrapper = ({ children, data }) => {
+const TemplateWrapper = ({ data, children }) => {
   const site = data.site.siteMetadata;
+  const hMargin = `8vw`;
+  const wrapperCss = css(
+    {
+      display: `grid`,
+      margin: `0 ${hMargin}`,
+      gridGap: `${rhythm(1.5)}`,
+      gridTemplateAreas: `
+        "header"
+        "content"
+        "author"
+      `,
+    },{
+      [MIN_MOBILE_MEDIA_QUERY]: {
+        gridTemplateColumns: `${rhythm(6)} auto`,
+        gridTemplateAreas: `
+          "header  header "
+          "author  content"
+        `
+      }
+    }
+  );
   const mainCss = css({
-    margin: '0 auto',
-    maxWidth: 960,
-    padding: `0px ${rhythm(1.5)} ${rhythm(1)}`
+    gridArea: 'content',
   });
-  const authorCss = css({
 
-  });
 
   return (
-    <div id="wrapper">
+    <div id="wrapper" className={wrapperCss}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         defaultTitle={site.title}
@@ -31,12 +50,12 @@ const TemplateWrapper = ({ children, data }) => {
         ]}
       />
       <Header
-        title={site.title}
-        themeColor={site.themeColor}
+        siteData={site}
+        gridArea='header'
+        hMargin={hMargin}
       />
-      <main className={mainCss}>
-        {children()}
-      </main>
+      <main className={mainCss}>{children()}</main>
+      <Author gridArea='author'/>
     </div>
   );
 };

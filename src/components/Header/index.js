@@ -6,19 +6,20 @@ import { rhythm } from "../../utils/typography";
 import Logo from '../Logo';
 
 
-const Header = ({ title, themeColor }) => {
+const Header = ({ siteData, gridArea, hMargin = 0 }) => {
   const headerCss = css({
-    background: themeColor,
-    marginBottom: rhythm(1),
+    gridArea: gridArea,
+    margin: `0 -${hMargin}`,
+    backgroundColor: siteData.themeColor,
   });
   const innerCss = css({
     margin: `0 auto`,
-    maxWidth: 960,
-    padding: `${rhythm(1)} ${rhythm(1.5)}`,
+    padding: `${rhythm(1)} ${hMargin || rhythm(1.5)}`,
   });
   const unstyledLinkCss = css({
     display: `inline-block`,
     background: `none`,
+    lineHeight: .65,
     ':hover': {
       background: `none`
     }
@@ -28,7 +29,7 @@ const Header = ({ title, themeColor }) => {
     <header className={headerCss}>
       <div className={innerCss}>
         <Link to="/" className={unstyledLinkCss}>
-          <Logo title={title} />
+          <Logo title={siteData.title} />
         </Link>
       </div>
     </header>
@@ -36,8 +37,9 @@ const Header = ({ title, themeColor }) => {
 };
 
 Header.propTypes = {
-  title: PropTypes.string,
-  themeColor: PropTypes.string
+  siteData: PropTypes.object,
+  gridArea: PropTypes.string,
+  hMargin: PropTypes.string
 };
 
 export default Header;

@@ -19,9 +19,8 @@
     "gatsby-transformer-remark": "^1.7.36",
     "react-helmet": "^5.2.0",
     "svg-react-loader": "^0.4.5",
-    "typography": "^0.16.6",
-    "typography-plugin-code": "^0.16.11",
-    "typography-theme-lincoln": "^0.15.11"
+    "typography-breakpoint-constants": "^0.15.10",
+    "typography-plugin-code": "^0.16.11"
   },
   "keywords": [
     "gatsby"
