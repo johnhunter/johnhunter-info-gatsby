@@ -56,7 +56,7 @@ const Logo = ({title}) => {
 };
 
 Logo.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired
 };
 
 export default Logo;

@@ -13,7 +13,7 @@ const Author = ({ gridArea }) => {
       display: `flex`,
       flexDirection: `row`,
       alignItems: `center`,
-      borderTop: `1px solid ${slh(10, 70)}`,
+      borderTop: `1px solid ${slh(10, 80)}`,
       padding: `${rhythm(.5)} 0`,
       '& > div': {
         margin: `0 0 0 ${rhythm(1)}`

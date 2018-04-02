@@ -50,7 +50,7 @@ const TemplateWrapper = ({ data, children }) => {
         ]}
       />
       <Header
-        siteData={site}
+        data={site}
         gridArea='header'
         hMargin={hMargin}
       />
@@ -64,7 +64,7 @@ const TemplateWrapper = ({ data, children }) => {
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-  data: PropTypes.object
+  data: PropTypes.object.isRequired
 };
 
 export default TemplateWrapper;

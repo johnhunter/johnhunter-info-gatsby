@@ -16,7 +16,7 @@ const BlogPostTemplate = ({ data }) => {
 };
 
 BlogPostTemplate.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object.isRequired
 };
 
 export default BlogPostTemplate;
