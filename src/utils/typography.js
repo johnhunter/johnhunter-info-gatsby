@@ -38,6 +38,11 @@ theme.overrideStyles = ({ rhythm }) => {
     },
     'a:hover,a:active': {
       backgroundImage: 'none'
+    },
+    pre: {
+      // avoid hscroll on mobile
+      marginLeft: rhythm(-1),
+      marginRight: rhythm(-1)
     }
   };
 };

@@ -14,7 +14,7 @@ const TemplateWrapper = ({ data, children }) => {
     {
       display: `grid`,
       margin: `0 ${hMargin}`,
-      rowGap: `${rhythm(1.5)}`,
+      rowGap: rhythm(1.5),
       columnGap: hMargin,
       gridTemplateAreas: `
         "header"
