@@ -5,7 +5,7 @@ const themeHue = 200;
 const slh = (s, l, h = themeHue) => `hsl(${h},${s}%,${l}%)`;
 
 const theme = {
-  scaleRatio: 2,
+  scaleRatio: 2.5,
   rhythmUnit: `px`,
   googleFonts: [{
     name: `Varela Round`,
@@ -34,7 +34,7 @@ theme.overrideStyles = ({ rhythm }) => {
         rgba(0, 0, 0, 0) 1px,
         ${linkColor} 1px,
         ${linkColor} 2px,
-        rgba(0, 0, 0, 0) 2px)`, // eslint-disable-line
+        rgba(0, 0, 0, 0) 2px)`,
     },
     'a:hover,a:active': {
       backgroundImage: 'none'
@@ -47,4 +47,6 @@ theme.plugins = [
 ];
 
 const typography = new Typography(theme);
+typography.slh = slh;
+
 export default typography;
