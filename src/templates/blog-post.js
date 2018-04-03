@@ -7,10 +7,10 @@ const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const fm = post.frontmatter;
   return (
-    <article>
+    <article itemScope itemType="http://schema.org/BlogPosting">
       <Helmet title={fm.title} />
-      <h1>{fm.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <h1 itemProp="name">{fm.title}</h1>
+      <div itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
     </article>
   );
 };

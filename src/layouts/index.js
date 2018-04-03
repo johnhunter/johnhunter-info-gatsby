@@ -37,9 +37,10 @@ const TemplateWrapper = ({ data, children }) => {
 
   const site = data.site.siteMetadata;
   return (
-    <div id="wrapper" className={wrapperCss}>
+    <div className={wrapperCss}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
+        bodyAttributes={{ itemscope: true, itemtype: "http://schema.org/WebPage" }}
         defaultTitle={site.title}
         titleTemplate={`%s | ${site.title}`}
         meta={[

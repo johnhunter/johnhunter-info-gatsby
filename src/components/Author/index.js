@@ -39,11 +39,11 @@ const Author = ({ gridArea }) => {
   });
 
   return (
-    <aside className={authorCss}>
-      <img className={avatarCss} src={avatarImage} alt=""/>
+    <aside className={authorCss} itemScope itemType="http://schema.org/Person">
+      <img className={avatarCss} src={avatarImage} alt="" itemProp="image"/>
       <div>
-        <h3>John Hunter</h3>
-        <p>A short bio will be here.</p>
+        <h3 itemProp="name">John Hunter</h3>
+        <p itemProp="description">A short bio will be here.</p>
       </div>
     </aside>
   );

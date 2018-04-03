@@ -4,11 +4,11 @@ import Link from 'gatsby-link';
 
 
 const IndexPage = ({ data }) => (
-  <div>
+  <div itemScope itemType="http://schema.org/Blog">
     <h1>Hi people</h1>
     <h2>{data.allMarkdownRemark.totalCount} Posts</h2>
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
+      <div key={node.id} itemProp="blogPosts" itemScope itemType="http://schema.org/BlogPosting">
         <h3>
           <Link to={node.fields.slug}>
             {node.frontmatter.title}{" "}
