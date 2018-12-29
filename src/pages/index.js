@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 
 
 const IndexPage = ({ data }) => (
@@ -29,7 +29,7 @@ export default IndexPage;
 
 
 export const query = graphql`
-  query IndexQuery {
+  query {
     allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       totalCount
       edges {

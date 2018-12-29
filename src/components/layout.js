@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { css } from "glamor";
 import { rhythm } from "../utils/typography";
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
-import Header from '../components/Header';
-import Author from '../components/Author';
+import Header from './Header';
+import Author from './Author';
 
 
 const TemplateWrapper = ({ data, children }) => {
@@ -56,7 +57,7 @@ const TemplateWrapper = ({ data, children }) => {
         hMargin={hMargin}
       />
       <main className={mainCss}>
-        {children()}
+        {children}
       </main>
       <Author gridArea='author'/>
     </div>
@@ -64,21 +65,33 @@ const TemplateWrapper = ({ data, children }) => {
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.node.isRequired,
   data: PropTypes.object.isRequired
 };
 
-export default TemplateWrapper;
-
-
-export const query = graphql`
-  query TemplateWrapperQuery {
-    site {
-      siteMetadata {
-        title,
-        desc,
-        themeColor
+const LayoutWrapper = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title,
+            desc,
+            themeColor
+          }
+        }
       }
-    }
-  }
-`;
+    `}
+    render={data => (
+      <TemplateWrapper
+        data={data}
+      >{children}</TemplateWrapper>
+    )}
+  />
+);
+
+LayoutWrapper.propTypes = {
+  children: TemplateWrapper.propTypes.children
+};
+
+export default LayoutWrapper;

@@ -21,5 +21,10 @@ module.exports = {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "semi": ["error", "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "16.7",
+    }
   }
 };
