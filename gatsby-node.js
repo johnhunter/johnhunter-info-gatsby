@@ -1,6 +1,9 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+
+const bundleReportPath = path.join(__dirname, 'bundle_report');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -44,4 +47,16 @@ exports.createPages = ({ graphql, actions }) => {
       resolve();
     });
   });
+};
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if(stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      plugins: [new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false,
+        reportFilename: path.join(bundleReportPath, 'index.html'),
+      })]
+    });
+  }
 };

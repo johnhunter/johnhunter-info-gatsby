@@ -38,6 +38,12 @@
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.12.0"
-  }
+    "eslint-plugin-react": "^7.12.0",
+    "webpack-bundle-analyzer": "^3.0.3"
+  },
+  "browserslist": [
+    "last 2 version",
+    "not < 2%",
+    "not dead"
+  ]
 }
