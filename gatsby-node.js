@@ -52,6 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if(stage === 'build-javascript') {
     actions.setWebpackConfig({
+      devtool: false, // disable sourcemaps
       plugins: [new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         openAnalyzer: false,

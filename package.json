@@ -31,7 +31,7 @@
     "gatsby"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "rm -rf public && gatsby build",
     "dev": "gatsby develop",
     "clean": "rm -rf public",
     "lint": "eslint --ext .js --ignore-pattern public ."
