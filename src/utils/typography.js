@@ -5,39 +5,40 @@ const themeHue = 200;
 const slh = (s, l, h = themeHue) => `hsl(${h},${s}%,${l}%)`;
 
 const theme = {
-  scaleRatio: 2.5,
+  baseFontSize: `18px`,
+  baseLineHeight: 1.5,
+  scaleRatio: 2,
   rhythmUnit: `px`,
-  googleFonts: [{
-    name: `Varela Round`,
-    styles: [`400`],
-  }],
-  headerFontFamily: [`Varela Round`, `sans-serif`],
-  bodyFontFamily: [`sans-serif`],
+  headerFontFamily: [`Aleo`, `sans-serif`],
+  bodyFontFamily: [`Aleo`, `sans-serif`],
   headerWeight: `400`,
-  headerColor: slh(60, 30),
-  bodyColor: slh(0, 20),
+  headerColor: slh(0, 20),
+  bodyColor: slh(0, 30),
 };
 
-theme.overrideStyles = ({ rhythm }) => {
-  const linkColor = slh(100, 30);
+theme.overrideStyles = ({ adjustFontSizeTo, rhythm }) => {
+  const linkColor = slh(50, 80);
   return {
     'h1,h2,h3,h4,h5,h6': {
       marginTop: rhythm(1),
       marginBottom: rhythm(0.5),
     },
+    'time': {
+      ...adjustFontSizeTo(`15px`),
+      display: `block`,
+      fontWeight: `normal`,
+      fontStyle: `italic`,
+    },
     a: {
-      color: linkColor,
-      textDecoration: 'none',
-      backgroundImage: `linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0) 1px,
-        ${linkColor} 1px,
-        ${linkColor} 2px,
-        rgba(0, 0, 0, 0) 2px)`,
+      color: `inherit`,
+      textDecoration: `none`,
+      transition: `all 100ms cubic-bezier(0.4, 0, 0.2, 1)`,
+      borderBottom: `1px solid ${linkColor}`,
+      boxShadow: `inset 0 -6px 0px 0px ${linkColor}`,
+      fontWeight: `bold`,
     },
     'a:hover,a:active': {
-      backgroundImage: 'none'
+      color: slh(100, 5)
     },
     pre: {
       // avoid hscroll on mobile

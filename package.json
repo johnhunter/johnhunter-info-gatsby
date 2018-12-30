@@ -23,6 +23,7 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.18",
     "svg-react-loader": "^0.4.6",
+    "typeface-aleo": "0.0.69",
     "typography": "^0.16.18",
     "typography-breakpoint-constants": "^0.16.18",
     "typography-plugin-code": "^0.16.18"

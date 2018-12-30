@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { css } from "glamor";
 import { rhythm } from "../utils/typography";
+import 'typeface-aleo';
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import Header from './Header';
 import Author from './Author';

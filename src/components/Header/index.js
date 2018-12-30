@@ -18,10 +18,11 @@ const Header = ({ data, gridArea, hMargin = '0' }) => {
   });
   const unstyledLinkCss = css({
     display: `inline-block`,
-    background: `none`,
+    borderBottom: `none`,
+    boxShadow: `none`,
     lineHeight: .65,
     ':hover': {
-      background: `none`
+      color: `none`
     }
   });
 
