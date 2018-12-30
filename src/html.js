@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TypographyStyle } from 'react-typography';
-import typography from './utils/typography';
 
 export default class HTML extends React.Component {
   render() {
@@ -14,7 +12,6 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <TypographyStyle typography={typography} />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
