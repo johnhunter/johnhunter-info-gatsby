@@ -10,16 +10,16 @@ const Logo = ({title}) => {
     transition: `all .5s .5s`
   });
   const mainDotsCss = css({
-    fill: `hsl(200, 100%, 20%)`
+    fill: `#fff`
   });
   const mainConnectorCss = css({
-    fill: `hsl(200, 100%, 40%)`
+    fill: `rgba(255,255,255,.4)`
   });
   const suffixDotsCss = css({
-    fill: `hsl(200, 60%, 40%)`
+    fill: `#222`
   });
   const suffixConnectorCss = css({
-    fill: `hsl(200, 50%, 90%)`
+    fill: `rgba(0,0,0,.4)`
   });
 
   return (

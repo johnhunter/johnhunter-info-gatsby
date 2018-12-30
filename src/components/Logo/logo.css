@@ -8,18 +8,18 @@
 }
 
 .jhi-logo__main {
-  fill: hsl(200, 100%, 40%);
+  fill: rgba(0,0,0, .3);
 }
 .jhi-logo__main circle {
   transition: all 1.5s;
-  fill: hsl(200, 100%, 20%);
+  fill: #333;
 }
 .jhi-logo__suffix {
-  fill: hsl(200, 50%, 90%);
+  fill: rgba(255,255,255, .3);
 }
 .jhi-logo__suffix circle {
   transition: all .5s .5s;
-  fill: hsl(200, 60%, 40%);
+  fill: #fff;
 }
 .collapse circle {
   cy: calc(100% - 8px);
