@@ -3,8 +3,6 @@ import CodePlugin from 'typography-plugin-code';
 
 const themeHue = 200;
 const slh = (s, l, h = themeHue) => `hsl(${h},${s}%,${l}%)`;
-const typography = new Typography(theme);
-const { rhythm, scale } = typography;
 
 const theme = {
   scaleRatio: 2.5,
@@ -53,6 +51,9 @@ theme.plugins = [
   new CodePlugin()
 ];
 
+
+const typography = new Typography(theme);
+const { rhythm, scale } = typography;
 export {
   rhythm,
   scale,
