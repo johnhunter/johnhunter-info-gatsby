@@ -10,7 +10,12 @@ const BlogPostTemplate = ({ data }) => {
   return (
     <article itemScope itemType="http://schema.org/BlogPosting">
       <Helmet title={fm.title} />
-      <h1 itemProp="name">{fm.title}</h1>
+      <header>
+        <h1 itemProp="name">
+          {fm.title}
+          <time>{fm.date}</time>
+        </h1>
+      </header>
       <div itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
     </article>
   );
@@ -29,6 +34,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "DD MMMM YYYY")
       }
     }
   }

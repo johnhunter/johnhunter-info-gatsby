@@ -43,7 +43,7 @@ const Author = ({ gridArea }) => {
       <img className={avatarCss} src={avatarImage} alt="" itemProp="image"/>
       <div>
         <h3 itemProp="name">John Hunter</h3>
-        <p itemProp="description">A short bio will be here.</p>
+        <p itemProp="description">I&apos;m a Front-End Engineer living in Devon/London</p>
       </div>
     </aside>
   );

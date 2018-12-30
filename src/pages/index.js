@@ -6,15 +6,15 @@ import { graphql, Link } from 'gatsby';
 const IndexPage = ({ data }) => (
   <div itemScope itemType="http://schema.org/Blog">
     <h1>Hi people</h1>
-    <h2>{data.allMarkdownRemark.totalCount} Posts</h2>
+    <p>{data.allMarkdownRemark.totalCount} Posts</p>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id} itemProp="blogPosts" itemScope itemType="http://schema.org/BlogPosting">
-        <h3>
+        <h2>
           <Link to={node.fields.slug}>
-            {node.frontmatter.title}{" "}
-            <span>— {node.frontmatter.date}</span>
+            {node.frontmatter.title}
+            <time>{node.frontmatter.date}</time>
           </Link>
-        </h3>
+        </h2>
         <p>{node.excerpt}</p>
       </div>
     ))}
@@ -37,7 +37,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "DD MMM YYYY")
           }
           fields {
             slug
