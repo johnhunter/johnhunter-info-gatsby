@@ -17,6 +17,9 @@ const BlogPostTemplate = ({ data }) => {
         </h1>
       </header>
       <div itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <footer>
+        <p>Written on <b>{fm.date}</b></p>
+      </footer>
     </article>
   );
 };
